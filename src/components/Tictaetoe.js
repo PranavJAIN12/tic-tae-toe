@@ -59,15 +59,16 @@ export default function Tictaetoe() {
   }
 
 
-  const won=(winner)=>{
-  setLock(true)
-  if(winner==='x'){
-    titleRef.current.innerHTML="concratulations x won"
-  }
-  else{
-    titleRef.current.innerHTML="concratulations o won"
-  }
-  }
+  const won = (winner) => {
+    setLock(() => {
+      if (winner === 'x') {
+        titleRef.current.innerHTML = "Congratulations x won";
+      } else {
+        titleRef.current.innerHTML = "Congratulations o won";
+      }
+      return true;
+    });
+  };
   
 
   return (
